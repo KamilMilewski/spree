@@ -118,6 +118,12 @@ Spree::Core::Engine.add_routes do
 
       put '/classifications', to: 'classifications#update', as: :classifications
       get '/taxons/products', to: 'taxons#products', as: :taxon_products
+
+      # e-commerce-yossi begin
+
+      resources :vendors, only: [:index]
+
+      # e-commerce-yossi end
     end
 
     spree_path = Rails.application.routes.url_helpers.try(:spree_path, trailing_slash: true) || '/'

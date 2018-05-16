@@ -32,7 +32,8 @@ module Spree
         :store_attributes,
         :tag_attributes,
         :customer_return_attributes,
-        :reimbursement_attributes
+        :reimbursement_attributes,
+        :vendor_attributes
       ]
 
       mattr_reader *ATTRIBUTES
@@ -183,6 +184,14 @@ module Spree
           @@variant_attributes
         end
       end
+
+      # e-commerce-yossi begin
+
+      @@vendor_attributes = [
+        :id, :name, :show_website
+      ]
+
+      # e-commerce-yossi end
     end
   end
 end
